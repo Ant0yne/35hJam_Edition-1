@@ -7,20 +7,20 @@
 script = ExtResource( 2 )
 
 [node name="Commencer" type="TextureButton" parent="."]
-margin_left = 205.0
-margin_top = 396.0
-margin_right = 269.0
-margin_bottom = 460.0
+margin_left = 60.2024
+margin_top = 332.02
+margin_right = 124.202
+margin_bottom = 396.02
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quitter" type="TextureButton" parent="."]
-margin_left = 808.0
-margin_top = 377.0
-margin_right = 872.0
-margin_bottom = 441.0
+margin_left = 434.22
+margin_top = 334.346
+margin_right = 498.22
+margin_bottom = 398.346
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -19,6 +19,12 @@ config/name="35hJAm_Edition-1"
 run/main_scene="res://Scene/Menu.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=600
+window/size/height=450
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
