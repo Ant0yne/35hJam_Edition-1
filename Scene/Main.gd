@@ -1,14 +1,19 @@
 extends Node2D
 
-onready var Arbres = $Arbres
-onready var ArrierePlan = $"Arriere Plan"
+onready var nuage = $Nuage
+onready var visibilityNotifier2D = $Nuage/VisibilityNotifier2D
+
+var nuage_visible = true
+
+func _ready():
+	nuage_visible = true
 
 func _input(event):
 	if event.is_action_released("ui_cancel"):
 		get_tree().quit()
 
 func _process(delta):
-	Arbres.position.x -= 0.1
-	Arbres.position.y += 0.01
-	ArrierePlan.position.x -= 0.01
-	ArrierePlan.position.y += 0.001
+	if nuage.position.x > -305 :
+			nuage.position.x -= 0.05
+	if nuage.position.x <= -305 :
+			nuage.position.x = 906
