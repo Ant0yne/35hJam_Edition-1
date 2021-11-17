@@ -1,6 +1,6 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
-[ext_resource path="res://Scene/Jour1Saison1.gd" type="Script" id=1]
+[ext_resource path="res://Script/Jour1Saison1.gd" type="Script" id=1]
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/Herbe sac.png" type="Texture" id=2]
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/PersonnageJ1S1/personnageJour1Saison10021.png" type="Texture" id=3]
 [ext_resource path="res://Placeholder/Fond Blanc.png" type="Texture" id=4]
@@ -41,6 +41,7 @@
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/PersonnageJ1S1/personnageJour1Saison10030.png" type="Texture" id=39]
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/PersonnageJ1S1/personnageJour1Saison10029.png" type="Texture" id=40]
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/Herbe Perso.png" type="Texture" id=41]
+[ext_resource path="res://SD/Jour1Saison1.ogg" type="AudioStream" id=42]
 
 [sub_resource type="Shader" id=1]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
@@ -378,9 +379,13 @@ offset = Vector2( -326.166, -295.72 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 99.1428, 362.122 )
 frames = SubResource( 9 )
-frame = 21
+frame = 27
 playing = true
 
 [node name="Herbe Perso" type="Sprite" parent="Personnage"]
 material = SubResource( 11 )
 texture = ExtResource( 41 )
+
+[node name="Son Foret" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 42 )
+autoplay = true

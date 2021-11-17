@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nuit1Saison1.ogg-8475f6720c2e37bdefefa2b6ecfa2509.oggstr"
+
+[deps]
+
+source_file="res://SD/Nuit1Saison1.ogg"
+dest_files=[ "res://.import/Nuit1Saison1.ogg-8475f6720c2e37bdefefa2b6ecfa2509.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
