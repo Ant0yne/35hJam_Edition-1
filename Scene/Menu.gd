@@ -4,11 +4,14 @@ var jour_nuit
 
 func _ready():
 	jour_nuit = OS.get_datetime(false)
+	print(jour_nuit)
 
 func _process(delta):
 	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
 		_jour()
-	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] < 6:
+	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
+		_nuit()
+	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
 		_nuit()
 	
 func _jour():
