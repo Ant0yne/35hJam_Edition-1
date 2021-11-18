@@ -1,6 +1,10 @@
 extends Node2D
 
 var jour_nuit
+var scene_jour = [
+	preload("res://Scene/Jour1Saison1.tscn"),
+	preload("res://Scene/Jour2Saison1.tscn")
+]
 
 func _ready():
 	jour_nuit = OS.get_datetime(false)
@@ -15,7 +19,14 @@ func _process(delta):
 		_nuit()
 	
 func _jour():
-	get_tree().change_scene("res://Scene/Jour1Saison1.tscn")
+	randomize()
+	if scene_jour.empty():
+		return
+	else : 
+		var scene_random = randi() % scene_jour.size()
+		var scene = scene_jour[scene_random].instance()
+		add_child(scene)
+		scene_jour.clear()
 	
 func _nuit():
 	get_tree().change_scene("res://Scene/Nuit1Saison1.tscn")
