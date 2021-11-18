@@ -6,13 +6,18 @@ var scene_jour = [
 	preload("res://Scene/Jour2Saison1.tscn")
 ]
 
+var scene_nuit = [
+	preload("res://Scene/Nuit1Saison1.tscn"),
+	preload("res://Scene/Nuit2Saison1.tscn")
+]
+
 func _ready():
 	jour_nuit = OS.get_datetime(false)
 	print(jour_nuit)
 
 func _process(delta):
 	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
-		_jour()
+		_nuit()
 	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
 		_nuit()
 	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
@@ -29,7 +34,14 @@ func _jour():
 		scene_jour.clear()
 	
 func _nuit():
-	get_tree().change_scene("res://Scene/Nuit1Saison1.tscn")
+	randomize()
+	if scene_nuit.empty():
+		return
+	else : 
+		var scene_random = randi() % scene_nuit.size()
+		var scene = scene_nuit[scene_random].instance()
+		add_child(scene)
+		scene_nuit.clear()
 
 func _input(event):
 	if event.is_action_released("ui_cancel"):
