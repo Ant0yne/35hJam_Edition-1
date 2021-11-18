@@ -379,7 +379,7 @@ offset = Vector2( -326.166, -295.72 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 99.1428, 362.122 )
 frames = SubResource( 9 )
-frame = 27
+frame = 11
 playing = true
 
 [node name="Herbe Perso" type="Sprite" parent="Personnage"]

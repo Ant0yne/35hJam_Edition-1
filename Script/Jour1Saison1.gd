@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var nuage = $Nuage
-onready var visibilityNotifier2D = $Nuage/VisibilityNotifier2D
 
 var nuage_visible = true
 

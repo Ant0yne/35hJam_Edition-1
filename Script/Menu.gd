@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
-		_nuit()
+		_jour()
 	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
 		_nuit()
 	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
@@ -46,9 +46,3 @@ func _nuit():
 func _input(event):
 	if event.is_action_released("ui_cancel"):
 		get_tree().quit()
-
-func _on_Commencer_button_up():
-	get_tree().change_scene("res://Scene/Jour1Saison1.tscn")
-
-func _on_Quitter_button_up():
-	get_tree().quit()

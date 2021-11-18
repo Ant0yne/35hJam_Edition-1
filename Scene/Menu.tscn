@@ -1,29 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Script/Menu.gd" type="Script" id=2]
 
-[node name="Menu2" type="Node2D"]
+[node name="Menu" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Commencer" type="TextureButton" parent="."]
-margin_left = 60.2024
-margin_top = 332.02
-margin_right = 124.202
-margin_bottom = 396.02
-texture_normal = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Quitter" type="TextureButton" parent="."]
-margin_left = 434.22
-margin_top = 334.346
-margin_right = 498.22
-margin_bottom = 398.346
-texture_normal = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="button_up" from="Commencer" to="." method="_on_Commencer_button_up"]
-[connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]
