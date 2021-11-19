@@ -91,7 +91,6 @@ texture = ExtResource( 1 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 219.593, 323.694 )
 frames = SubResource( 1 )
-frame = 9
 playing = true
 
 [node name="Tout" type="Sprite" parent="."]

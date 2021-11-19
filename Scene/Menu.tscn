@@ -20,3 +20,8 @@ script = ExtResource( 2 )
 [node name="Splash Screen" type="AnimatedSprite" parent="."]
 position = Vector2( 300, 225 )
 frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

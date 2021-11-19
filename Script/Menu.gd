@@ -1,28 +1,24 @@
 extends Node2D
 
+onready var timer = $Timer
+
 var jour_nuit
 var scene_jour = [
 	preload("res://Scene/Jour1Saison1.tscn"),
 	preload("res://Scene/Jour2Saison1.tscn")
 ]
-
 var scene_nuit = [
 	preload("res://Scene/Nuit1Saison1.tscn"),
 	preload("res://Scene/Nuit2Saison1.tscn")
 ]
 
+export var duree = int(10)
+
 func _ready():
 	jour_nuit = OS.get_datetime(false)
 	print(jour_nuit)
+	timer.start(duree)
 
-#func _process(delta):
-#	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
-#		_jour()
-#	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
-#		_nuit()
-#	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
-#		_nuit()
-	
 func _jour():
 	randomize()
 	if scene_jour.empty():
@@ -59,3 +55,6 @@ func _transition():
 		_nuit()
 	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
 		_nuit()
+
+func _on_Timer_timeout():
+	_transition()

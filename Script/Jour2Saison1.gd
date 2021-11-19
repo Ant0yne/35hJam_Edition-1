@@ -22,7 +22,6 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed and clic_possible and !son_joue :
 			vent.play()
 			son_joue = true
-			print(vent.stream)
 
 func _on_Area2D_mouse_entered():
 	clic_possible = true
