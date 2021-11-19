@@ -23,7 +23,6 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed and clique_possible and !son_joue :
 			craquement.play()
 			son_joue = true
-			print(craquement.stream)
 
 func _on_Area2D_mouse_entered():
 	clique_possible = true

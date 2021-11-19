@@ -126,7 +126,7 @@ texture = ExtResource( 2 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 328.612, 309.951 )
 frames = SubResource( 3 )
-frame = 29
+frame = 10
 playing = true
 
 [node name="Ambiance" type="AudioStreamPlayer" parent="."]
@@ -141,3 +141,4 @@ polygon = PoolVector2Array( -12.2283, 459.136, -5.99197, -19.2764, 613.183, -9.4
 [node name="Vent" type="AudioStreamPlayer" parent="."]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="finished" from="Vent" to="." method="_on_Vent_finished"]
