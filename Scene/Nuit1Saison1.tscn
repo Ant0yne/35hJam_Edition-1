@@ -35,7 +35,6 @@
 [ext_resource path="res://SD/Nuit1Saison1.ogg" type="AudioStream" id=33]
 [ext_resource path="res://Script/Nuit1Saison1.gd" type="Script" id=34]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 31 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ) ],
@@ -66,9 +65,19 @@ texture = ExtResource( 4 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 356, 337 )
 frames = SubResource( 1 )
-frame = 22
+frame = 25
 playing = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 33 )
 autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 284.064, 335.617, 267.074, 373.372, 280.052, 388.238, 303.413, 386.823, 321.347, 377.148, 315.448, 365.821, 313.56, 345.528 )
+
+[node name="Craquement" type="AudioStreamPlayer" parent="."]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="finished" from="Craquement" to="." method="_on_Craquement_finished"]

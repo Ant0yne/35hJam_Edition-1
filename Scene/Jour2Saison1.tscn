@@ -38,7 +38,6 @@
 [ext_resource path="res://SD/Jour2Saison1.ogg" type="AudioStream" id=36]
 [ext_resource path="res://Script/Jour2Saison1.gd" type="Script" id=37]
 
-
 [sub_resource type="Shader" id=1]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
 // original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
@@ -127,9 +126,18 @@ texture = ExtResource( 2 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 328.612, 309.951 )
 frames = SubResource( 3 )
-frame = 22
+frame = 29
 playing = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 36 )
 autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -12.2283, 459.136, -5.99197, -19.2764, 613.183, -9.47649, 609.619, 143.758, 597.213, 154.715, 594.435, 164.636, 581.339, 187.257, 577.768, 207.099, 555.941, 228.529, 548.798, 273.77, 526.177, 265.833, 487.704, 299.845, 485.344, 313.531, 449.477, 326.273, 441.454, 352.701, 434.375, 352.701, 429.655, 364.972, 380.102, 395.648, 361.696, 398.479, 356.505, 402.255, 338.1, 399.895, 341.403, 322.497, 347.538, 324.857, 369.719, 316.362, 371.607, 305.036, 368.303, 300.316, 373.967, 297.013, 375.854, 282.855, 368.775, 282.855, 357.921, 285.214, 358.393, 275.304, 362.168, 252.651, 352.258, 239.437, 339.043, 234.245, 329.133, 239.437, 329.605, 224.335, 301.76, 219.615, 303.176, 253.123, 297.041, 272, 301.76, 289.934, 300.816, 327.217, 304.12, 338.543, 309.311, 398.951, 302.704, 399.423, 297.985, 402.255, 254.567, 411.694, 184.72, 414.053, 174.337, 420.66, 165.371, 422.076, 147.909, 442.841, 145.549, 457.471 )
+
+[node name="Vent" type="AudioStreamPlayer" parent="."]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

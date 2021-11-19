@@ -28,7 +28,6 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed and clique_possible == true and son_joue == false :
 			sonFeuilles.play()
 			son_joue = true
-			print(sonFeuilles.stream)
 
 func _process(delta):
 	if nuage.position.x > -305 :
