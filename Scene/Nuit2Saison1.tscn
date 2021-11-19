@@ -14,7 +14,8 @@
 [ext_resource path="res://Graphisme/Nuit2Saison1/Personnage/personnageNuit2Saison10008.png" type="Texture" id=12]
 [ext_resource path="res://Graphisme/Nuit2Saison1/Personnage/personnageNuit2Saison10005.png" type="Texture" id=13]
 [ext_resource path="res://SD/Nuit2Saison1.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Scene/Nuit2Saison1.gd" type="Script" id=15]
+[ext_resource path="res://Script/Nuit2Saison1.gd" type="Script" id=15]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

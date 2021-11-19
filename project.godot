@@ -25,10 +25,6 @@ window/size/width=600
 window/size/height=450
 window/size/resizable=false
 
-[editor_plugins]
-
-enabled=PoolStringArray( "mixing-desk" )
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"

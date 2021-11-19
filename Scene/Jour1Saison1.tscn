@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Script/Jour1Saison1.gd" type="Script" id=1]
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/Herbe sac.png" type="Texture" id=2]
@@ -43,11 +43,6 @@
 [ext_resource path="res://Graphisme/Jour 1 Saison 1/Herbe Perso.png" type="Texture" id=41]
 [ext_resource path="res://SD/Jour1Saison1.ogg" type="AudioStream" id=42]
 [ext_resource path="res://SD/Son feuilles.wav" type="AudioStream" id=43]
-[ext_resource path="res://addons/mixing-desk/sound/nonspatial/ran_cont.gd" type="Script" id=44]
-[ext_resource path="res://SD/Son feuilles5.wav" type="AudioStream" id=45]
-[ext_resource path="res://SD/Son feuilles4.wav" type="AudioStream" id=46]
-[ext_resource path="res://SD/Son feuilles3.wav" type="AudioStream" id=47]
-[ext_resource path="res://SD/Son feuilles2.wav" type="AudioStream" id=48]
 
 [sub_resource type="Shader" id=1]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
@@ -385,7 +380,7 @@ offset = Vector2( -326.166, -295.72 )
 [node name="Personnage" type="AnimatedSprite" parent="."]
 position = Vector2( 99.1428, 362.122 )
 frames = SubResource( 9 )
-frame = 12
+frame = 3
 playing = true
 
 [node name="Herbe Perso" type="Sprite" parent="Personnage"]
@@ -396,6 +391,9 @@ texture = ExtResource( 41 )
 stream = ExtResource( 42 )
 autoplay = true
 
+[node name="Son Feuilles" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 43 )
+
 [node name="Zone Clicable" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Zone Clicable"]
@@ -404,24 +402,6 @@ polygon = PoolVector2Array( 43.55, -12.6471, 651.606, -6.23412, 654.438, 40.0157
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Zone Clicable"]
 polygon = PoolVector2Array( 478.591, 90.6549, 516.009, 96.4457, 522.245, 108.027, 576.145, 146.782, 575.254, 181.527, 542.291, 181.527, 526.7, 200.681, 489.282, 178.854, 497.3, 156.136, 491.064, 149.009, 463.446, 140.1, 459.437, 116.936 )
-
-[node name="RanSoundContainer" type="Node" parent="."]
-script = ExtResource( 44 )
-sound_number = 1
-
-[node name="Son Feuilles 1" type="AudioStreamPlayer" parent="RanSoundContainer"]
-stream = ExtResource( 43 )
-
-[node name="Son Feuilles 2" type="AudioStreamPlayer" parent="RanSoundContainer"]
-stream = ExtResource( 48 )
-
-[node name="Son Feuilles 3" type="AudioStreamPlayer" parent="RanSoundContainer"]
-stream = ExtResource( 47 )
-
-[node name="Son Feuilles 4" type="AudioStreamPlayer" parent="RanSoundContainer"]
-stream = ExtResource( 46 )
-
-[node name="Son Feuilles 5" type="AudioStreamPlayer" parent="RanSoundContainer"]
-stream = ExtResource( 45 )
+[connection signal="finished" from="Son Feuilles" to="." method="_on_Son_Feuilles_finished"]
 [connection signal="mouse_entered" from="Zone Clicable" to="." method="_on_Zone_Clicable_mouse_entered"]
 [connection signal="mouse_exited" from="Zone Clicable" to="." method="_on_Zone_Clicable_mouse_exited"]

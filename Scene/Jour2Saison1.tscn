@@ -36,7 +36,8 @@
 [ext_resource path="res://Graphisme/Jour 2 Saison 1/Personnage/personnageJour2Saison10012.png" type="Texture" id=34]
 [ext_resource path="res://Graphisme/Jour 2 Saison 1/Personnage/personnageJour2Saison10010.png" type="Texture" id=35]
 [ext_resource path="res://SD/Jour2Saison1.ogg" type="AudioStream" id=36]
-[ext_resource path="res://Scene/Jour2Saison1.gd" type="Script" id=37]
+[ext_resource path="res://Script/Jour2Saison1.gd" type="Script" id=37]
+
 
 [sub_resource type="Shader" id=1]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
