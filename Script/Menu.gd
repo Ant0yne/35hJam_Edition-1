@@ -15,13 +15,13 @@ func _ready():
 	jour_nuit = OS.get_datetime(false)
 	print(jour_nuit)
 
-func _process(delta):
-	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
-		_jour()
-	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
-		_nuit()
-	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
-		_nuit()
+#func _process(delta):
+#	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
+#		_jour()
+#	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
+#		_nuit()
+#	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
+#		_nuit()
 	
 func _jour():
 	randomize()
@@ -44,5 +44,18 @@ func _nuit():
 		scene_nuit.clear()
 
 func _input(event):
-	if event.is_action_released("ui_cancel"):
-		get_tree().quit()
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_ESCAPE :
+			get_tree().quit()
+		else:
+			_transition()
+	if event is InputEventMouseButton and event.pressed:
+		_transition()
+
+func _transition():
+	if jour_nuit["hour"] >= 6 && jour_nuit["hour"] < 18:
+		_jour()
+	if jour_nuit["hour"] >= 18 && jour_nuit["hour"] <= 23:
+		_nuit()
+	if jour_nuit["hour"] >= 00 && jour_nuit["hour"] < 6:
+		_nuit()
